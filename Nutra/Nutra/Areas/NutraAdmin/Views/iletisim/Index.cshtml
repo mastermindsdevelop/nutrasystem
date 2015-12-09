@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Nutra.Models.iletisim>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/NutraAdmin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<ul class="breadcrumb">
+    <li>
+        <i class="icon-home"></i>
+        <a href="index.html">Home</a>
+        <i class="icon-angle-right"></i>
+    </li>
+    <li><a href="#">Messages</a></li>
+</ul>
+<div class="row-fluid">
+
+    <div class="span7">
+        <h1>Gelen kutusu</h1>
+
+        <ul class="messagesList">
+            
+            @foreach (var mesaj in Model)
+            {
+
+
+                <li>
+                    <a href="@Url.Action("index", "iletisim", new { id= mesaj.Id})">
+                    <span class="from">
+                        @if (mesaj.goruldu != 0)
+                        {
+                            <span class="glyphicons star"><i></i> </span>
+                            @mesaj.adsoyad
+                        }
+                        else
+                        {
+                            <span class="glyphicons dislikes"><i></i></span> 
+                            <b> @mesaj.adsoyad</b>
+                        }
+                       
+                    </span>
+                    <span class="title">
+                        @if (mesaj.goruldu == 0)
+                        {
+                            <b> @mesaj.konu</b>
+                        }
+                        else
+                        {
+                            @mesaj.konu ;
+                        }
+                    </span>
+                    </a>
+                    <span class="date">@mesaj.tarih</span>
+                </li>
+            }
+        </ul>
+
+    </div>
+    @Html.Action("detay", "iletisim", new { id=ViewBag.ilk })
+
+</div>

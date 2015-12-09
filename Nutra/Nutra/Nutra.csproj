@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30A64896-291A-413B-AFEF-DC8603677049}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nutra</RootNamespace>
+    <AssemblyName>Nutra</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DAL.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\NutraAdmin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\NutraAdmin\Controllers\iletisimController.cs" />
+    <Compile Include="Areas\NutraAdmin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\NutraAdmin\NutraAdminAreaRegistration.cs" />
+    <Compile Include="Controllers\iletisimController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512081553145_1.cs" />
+    <Compile Include="Migrations\201512081553145_1.Designer.cs">
+      <DependentUpon>201512081553145_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512082104403_2.cs" />
+    <Compile Include="Migrations\201512082104403_2.Designer.cs">
+      <DependentUpon>201512082104403_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512082140248_3.cs" />
+    <Compile Include="Migrations\201512082140248_3.Designer.cs">
+      <DependentUpon>201512082140248_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\iletisim.cs" />
+    <Compile Include="Models\login.cs" />
+    <Compile Include="Models\nereden.cs" />
+    <Compile Include="Models\sube.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\NutraAdmin\content\css\bootstrap-responsive.css" />
+    <Content Include="Areas\NutraAdmin\content\css\bootstrap-responsive.min.css" />
+    <Content Include="Areas\NutraAdmin\content\css\bootstrap.css" />
+    <Content Include="Areas\NutraAdmin\content\css\bootstrap.min.css" />
+    <Content Include="Areas\NutraAdmin\content\css\chosen.css" />
+    <Content Include="Areas\NutraAdmin\content\css\elfinder.min.css" />
+    <Content Include="Areas\NutraAdmin\content\css\elfinder.theme.css" />
+    <Content Include="Areas\NutraAdmin\content\css\font-awesome-ie7.min.css" />
+    <Content Include="Areas\NutraAdmin\content\css\font-awesome.min.css" />
+    <Content Include="Areas\NutraAdmin\content\css\fullcalendar.css" />
+    <Content Include="Areas\NutraAdmin\content\css\glyphicons.css" />
+    <Content Include="Areas\NutraAdmin\content\css\halflings.css" />
+    <Content Include="Areas\NutraAdmin\content\css\ie.css" />
+    <Content Include="Areas\NutraAdmin\content\css\ie9.css" />
+    <Content Include="Areas\NutraAdmin\content\css\jquery-ui-1.8.21.custom.css" />
+    <Content Include="Areas\NutraAdmin\content\css\jquery.cleditor.css" />
+    <Content Include="Areas\NutraAdmin\content\css\jquery.gritter.css" />
+    <Content Include="Areas\NutraAdmin\content\css\jquery.iphone.toggle.css" />
+    <Content Include="Areas\NutraAdmin\content\css\jquery.noty.css" />
+    <Content Include="Areas\NutraAdmin\content\css\noty_theme_default.css" />
+    <Content Include="Areas\NutraAdmin\content\css\style-forms.css" />
+    <Content Include="Areas\NutraAdmin\content\css\style-responsive.css" />
+    <Content Include="Areas\NutraAdmin\content\css\style.css" />
+    <Content Include="Areas\NutraAdmin\content\css\uniform.default.css" />
+    <Content Include="Areas\NutraAdmin\content\css\uploadify.css" />
+    <Content Include="Areas\NutraAdmin\content\font\glyphicons-regular.svg" />
+    <Content Include="Areas\NutraAdmin\content\font\glyphiconshalflings-regular.svg" />
+    <Content Include="Areas\NutraAdmin\content\img\arrows-active.png" />
+    <Content Include="Areas\NutraAdmin\content\img\arrows-normal.png" />
+    <Content Include="Areas\NutraAdmin\content\img\avatar.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\bg-input-focus.png" />
+    <Content Include="Areas\NutraAdmin\content\img\bg-input.png" />
+    <Content Include="Areas\NutraAdmin\content\img\bg-login.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\browser-chrome-big.png" />
+    <Content Include="Areas\NutraAdmin\content\img\browser-firefox-big.png" />
+    <Content Include="Areas\NutraAdmin\content\img\browser-ie.png" />
+    <Content Include="Areas\NutraAdmin\content\img\browser-opera.png" />
+    <Content Include="Areas\NutraAdmin\content\img\browser-safari.png" />
+    <Content Include="Areas\NutraAdmin\content\img\buttons.gif" />
+    <Content Include="Areas\NutraAdmin\content\img\chat-left%402x.png" />
+    <Content Include="Areas\NutraAdmin\content\img\chat-left-metro%402x.png" />
+    <Content Include="Areas\NutraAdmin\content\img\chat-left-metro.png" />
+    <Content Include="Areas\NutraAdmin\content\img\chat-left.png" />
+    <Content Include="Areas\NutraAdmin\content\img\chat-right%402x.png" />
+    <Content Include="Areas\NutraAdmin\content\img\chat-right-metro%402x.png" />
+    <Content Include="Areas\NutraAdmin\content\img\chat-right-metro.png" />
+    <Content Include="Areas\NutraAdmin\content\img\chat-right.png" />
+    <Content Include="Areas\NutraAdmin\content\img\chosen-sprite.png" />
+    <Content Include="Areas\NutraAdmin\content\img\close-button-white.png" />
+    <Content Include="Areas\NutraAdmin\content\img\close-button.png" />
+    <Content Include="Areas\NutraAdmin\content\img\crop.gif" />
+    <Content Include="Areas\NutraAdmin\content\img\dialogs.png" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo1.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo10.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo11.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo12.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo13.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo2.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo3.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo4.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo5.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo6.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo7.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo8.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\gallery\photo9.jpg" />
+    <Content Include="Areas\NutraAdmin\content\img\glyphicons-halflings-white.png" />
+    <Content Include="Areas\NutraAdmin\content\img\glyphicons-halflings.png" />
+    <Content Include="Areas\NutraAdmin\content\img\glyphicons-white.png" />
+    <Content Include="Areas\NutraAdmin\content\img\glyphicons-white.svg" />
+    <Content Include="Areas\NutraAdmin\content\img\glyphicons.png" />
+    <Content Include="Areas\NutraAdmin\content\img\glyphicons.svg" />
+    <Content Include="Areas\NutraAdmin\content\img\glyphicons_halflings-white.png" />
+    <Content Include="Areas\NutraAdmin\content\img\glyphicons_halflings-white.svg" />
+    <Content Include="Areas\NutraAdmin\content\img\glyphicons_halflings.png" />
+    <Content Include="Areas\NutraAdmin\content\img\glyphicons_halflings.svg" />
+    <Content Include="Areas\NutraAdmin\content\img\icons-big.png" />
+    <Content Include="Areas\NutraAdmin\content\img\icons-small.png" />
+    <Content Include="Areas\NutraAdmin\content\img\iphone-style-checkboxes\off-63584.png" />
+    <Content Include="Areas\NutraAdmin\content\img\iphone-style-checkboxes\on-63584.png" />
+    <Content Include="Areas\NutraAdmin\content\img\iphone-style-checkboxes\slider_center-63584.png" />
+    <Content Include="Areas\NutraAdmin\content\img\iphone-style-checkboxes\slider_left-63584.png" />
+    <Content Include="Areas\NutraAdmin\content\img\iphone-style-checkboxes\slider_right-63584.png" />
+    <Content Include="Areas\NutraAdmin\content\img\progress.gif" />
+    <Content Include="Areas\NutraAdmin\content\img\quicklook-bg.png" />
+    <Content Include="Areas\NutraAdmin\content\img\quicklook-icons.png" />
+    <Content Include="Areas\NutraAdmin\content\img\quote.png" />
+    <Content Include="Areas\NutraAdmin\content\img\resize.png" />
+    <Content Include="Areas\NutraAdmin\content\img\slider_r8.png" />
+    <Content Include="Areas\NutraAdmin\content\img\spinner-mini.gif" />
+    <Content Include="Areas\NutraAdmin\content\img\sprite.png" />
+    <Content Include="Areas\NutraAdmin\content\img\timeline-bg.png" />
+    <Content Include="Areas\NutraAdmin\content\img\timeline-left-arrow%402x.png" />
+    <Content Include="Areas\NutraAdmin\content\img\timeline-left-arrow.png" />
+    <Content Include="Areas\NutraAdmin\content\img\timeline-right-arrow%402x.png" />
+    <Content Include="Areas\NutraAdmin\content\img\timeline-right-arrow.png" />
+    <Content Include="Areas\NutraAdmin\content\img\toolbar.gif" />
+    <Content Include="Areas\NutraAdmin\content\img\toolbar.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-icons_222222_256x240.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-icons_454545_256x240.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-icons_888888_256x240.png" />
+    <Content Include="Areas\NutraAdmin\content\img\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Areas\NutraAdmin\content\img\uploadify-cancel.png" />
+    <Content Include="Areas\NutraAdmin\content\js\bootstrap.js" />
+    <Content Include="Areas\NutraAdmin\content\js\bootstrap.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\counter.js" />
+    <Content Include="Areas\NutraAdmin\content\js\custom.js" />
+    <Content Include="Areas\NutraAdmin\content\js\excanvas.js" />
+    <Content Include="Areas\NutraAdmin\content\js\fullcalendar.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery-1.9.1.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery-migrate-1.0.0.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery-ui-1.10.0.custom.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.chosen.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.cleditor.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.cookie.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.dataTables.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.elfinder.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.flot.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.flot.pie.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.flot.resize.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.flot.stack.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.gritter.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.imagesloaded.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.iphone.toggle.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.knob.modified.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.masonry.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.noty.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.raty.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.sparkline.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.ui.touch-punch.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.uniform.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\jquery.uploadify-3.1.min.js" />
+    <Content Include="Areas\NutraAdmin\content\js\modernizr.js" />
+    <Content Include="Areas\NutraAdmin\content\js\retina.js" />
+    <Content Include="Content\audio\californication.html" />
+    <Content Include="Content\css\blank.gif" />
+    <Content Include="Content\css\color-blue.css" />
+    <Content Include="Content\css\color-green.css" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\fullwidth\loading.gif" />
+    <Content Include="Content\css\fullwidth\skin.css" />
+    <Content Include="Content\css\fullwidth\skin.png" />
+    <Content Include="Content\css\jquery.fancybox.css" />
+    <Content Include="Content\css\layerslider.css" />
+    <Content Include="Content\css\owl.carousel.css" />
+    <Content Include="Content\css\styles.css" />
+    <Content Include="Content\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="Content\images\twitter_bird.html" />
+    <Content Include="Content\img\blank.gif" />
+    <Content Include="Content\img\blue\last-news%402x.png" />
+    <Content Include="Content\img\blue\last-news.png" />
+    <Content Include="Content\img\blue\location%402x.png" />
+    <Content Include="Content\img\blue\location.png" />
+    <Content Include="Content\img\blue\logo.png" />
+    <Content Include="Content\img\blue\quick-search.png" />
+    <Content Include="Content\img\blue\recent-posts%402x.png" />
+    <Content Include="Content\img\blue\recent-posts.png" />
+    <Content Include="Content\img\blue\select.png" />
+    <Content Include="Content\img\blue\work-time%402x.png" />
+    <Content Include="Content\img\blue\work-time.png" />
+    <Content Include="Content\img\fancybox_loading%402x.gif" />
+    <Content Include="Content\img\fancybox_loading.gif" />
+    <Content Include="Content\img\fancybox_overlay.png" />
+    <Content Include="Content\img\fancybox_sprite%402x.png" />
+    <Content Include="Content\img\fancybox_sprite.png" />
+    <Content Include="Content\img\find.png" />
+    <Content Include="Content\img\green\last-news%402x.png" />
+    <Content Include="Content\img\green\last-news.png" />
+    <Content Include="Content\img\green\location%402x.png" />
+    <Content Include="Content\img\green\location.png" />
+    <Content Include="Content\img\green\logo.png" />
+    <Content Include="Content\img\green\quick-search.png" />
+    <Content Include="Content\img\green\recent-posts%402x.png" />
+    <Content Include="Content\img\green\recent-posts.png" />
+    <Content Include="Content\img\green\select.png" />
+    <Content Include="Content\img\green\work-time%402x.png" />
+    <Content Include="Content\img\green\work-time.png" />
+    <Content Include="Content\img\header.png" />
+    <Content Include="Content\img\progress-bar.png" />
+    <Content Include="Content\img\select.png" />
+    <Content Include="Content\js\greensock.js" />
+    <Content Include="Content\js\jquery-ui-tabs-rotate.js" />
+    <Content Include="Content\js\jquery-ui.min.js" />
+    <Content Include="Content\js\jquery.autocomplete.min.js" />
+    <Content Include="Content\js\jquery.easypiechart.js" />
+    <Content Include="Content\js\jquery.fancybox-media.js" />
+    <Content Include="Content\js\jquery.fancybox.pack.js" />
+    <Content Include="Content\js\jquery.flot.categories.js" />
+    <Content Include="Content\js\jquery.flot.js" />
+    <Content Include="Content\js\jquery.flot.pie.js" />
+    <Content Include="Content\js\jquery.isotope.min.js" />
+    <Content Include="Content\js\jquery.migrate.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jquery.superscrollorama.js" />
+    <Content Include="Content\js\jquery.tweet.js" />
+    <Content Include="Content\js\jquery.ui.accordion.min.js" />
+    <Content Include="Content\js\jquery.ui.core.min.js" />
+    <Content Include="Content\js\jquery.ui.tabs.min.js" />
+    <Content Include="Content\js\jquery.ui.widget.min.js" />
+    <Content Include="Content\js\layerslider.kreaturamedia.jquery.js" />
+    <Content Include="Content\js\layerslider.transitions.js" />
+    <Content Include="Content\js\owl.carousel.min.js" />
+    <Content Include="Content\js\scripts.js" />
+    <Content Include="Content\js\TimelineMax.min.js" />
+    <Content Include="Content\js\TweenMax.min.js" />
+    <Content Include="Content\php\capcha.html" />
+    <Content Include="Content\php\image.html" />
+    <Content Include="Content\pic\404_mask.png" />
+    <Content Include="Content\pic\doctor-1.jpg" />
+    <Content Include="Content\pic\doctor-2.jpg" />
+    <Content Include="Content\pic\doctor-3.jpg" />
+    <Content Include="Content\pic\doctor-4.jpg" />
+    <Content Include="Content\pic\expert-1.png" />
+    <Content Include="Content\pic\expert-2.png" />
+    <Content Include="Content\pic\expert-3.png" />
+    <Content Include="Content\pic\features_unlimited_color.png" />
+    <Content Include="Content\pic\LayerSlider5.png" />
+    <Content Include="Content\pic\medical-slide-1.jpg" />
+    <Content Include="Content\pic\medical-slide-2.jpg" />
+    <Content Include="Content\pic\medical-slide-3.jpg" />
+    <Content Include="Content\pic\our-phylosophy.jpg" />
+    <Content Include="Content\pic\page-retina-ready\1\ipad.png" />
+    <Content Include="Content\pic\page-retina-ready\1\iphone.png" />
+    <Content Include="Content\pic\page-retina-ready\1\monitor.png" />
+    <Content Include="Content\pic\page-retina-ready\3\mac.png" />
+    <Content Include="Content\pic\page-retina-ready\4\color-1.png" />
+    <Content Include="Content\pic\page-retina-ready\4\color-2.png" />
+    <Content Include="Content\pic\page-retina-ready\4\color-3.png" />
+    <Content Include="Content\pic\page-retina-ready\4\color-4.png" />
+    <Content Include="Content\pic\page-retina-ready\4\color-5.png" />
+    <Content Include="Content\pic\page-retina-ready\4\color-6.png" />
+    <Content Include="Content\pic\page-retina-ready\5\icons-group.png" />
+    <Content Include="Content\pic\page-retina-ready\7\one-page.png" />
+    <Content Include="Content\pic\photo-tour-1.jpg" />
+    <Content Include="Content\pic\photo-tour-2.jpg" />
+    <Content Include="Content\pic\photo-tour-3.jpg" />
+    <Content Include="Content\pic\photo-tour-4.jpg" />
+    <Content Include="Content\pic\photo-tour-5.jpg" />
+    <Content Include="Content\pic\photo-tour-6.jpg" />
+    <Content Include="Content\pic\photo-tour-7.jpg" />
+    <Content Include="Content\pic\photo-tour-8.jpg" />
+    <Content Include="Content\pic\post\1.png" />
+    <Content Include="Content\pic\post\2.png" />
+    <Content Include="Content\pic\post\3.png" />
+    <Content Include="Content\pic\services-1.png" />
+    <Content Include="Content\pic\staff_item-1.png" />
+    <Content Include="Content\pic\testimonial-1.jpg" />
+    <Content Include="Content\pic\wellness-slide-1.jpg" />
+    <Content Include="Content\pic\wellness-slide-2.jpg" />
+    <Content Include="Content\pic\wellness-slide-3.jpg" />
+    <Content Include="Content\pic\wellness-slide-4.jpg" />
+    <Content Include="Content\tuner\css\styles.css" />
+    <Content Include="Content\tuner\js\scripts.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\NutraAdmin\Views\Web.config" />
+    <Content Include="Areas\NutraAdmin\content\font\fontawesome-webfont-0.eot" />
+    <Content Include="Areas\NutraAdmin\content\font\fontawesome-webfont-62877.eot" />
+    <Content Include="Areas\NutraAdmin\content\font\fontawesome-webfont-62877.ttf" />
+    <Content Include="Areas\NutraAdmin\content\font\fontawesome-webfont-62877.woff" />
+    <Content Include="Areas\NutraAdmin\content\font\glyphicons-regular-0.eot" />
+    <Content Include="Areas\NutraAdmin\content\font\glyphicons-regular.eot" />
+    <Content Include="Areas\NutraAdmin\content\font\glyphicons-regular.ttf" />
+    <Content Include="Areas\NutraAdmin\content\font\glyphicons-regular.woff" />
+    <Content Include="Areas\NutraAdmin\content\font\glyphiconshalflings-regular-0.eot" />
+    <Content Include="Areas\NutraAdmin\content\font\glyphiconshalflings-regular.eot" />
+    <Content Include="Areas\NutraAdmin\content\font\glyphiconshalflings-regular.ttf" />
+    <Content Include="Areas\NutraAdmin\content\font\glyphiconshalflings-regular.woff" />
+    <Content Include="Areas\NutraAdmin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\NutraAdmin\Views\Home\Index.cshtml" />
+    <Content Include="Content\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="Content\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="Content\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Areas\NutraAdmin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\NutraAdmin\Views\iletisim\Index.cshtml" />
+    <Content Include="Areas\NutraAdmin\Views\iletisim\detay.cshtml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_mainLayout.cshtml" />
+    <Content Include="Views\iletisim\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\NutraAdmin\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512081553145_1.resx">
+      <DependentUpon>201512081553145_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512082104403_2.resx">
+      <DependentUpon>201512082104403_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512082140248_3.resx">
+      <DependentUpon>201512082140248_3.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12419</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12419/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
